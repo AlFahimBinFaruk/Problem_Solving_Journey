@@ -26,7 +26,7 @@ Follow up: Your algorithm's time complexity must be better than O(n log n), wher
 """
 
 # Bucket sort method
-# Time Complexity : O(N^2)
+# Time O(N^2) | Space O(N^2)
 
 def topKFrequent(nums, k):
     count = {}

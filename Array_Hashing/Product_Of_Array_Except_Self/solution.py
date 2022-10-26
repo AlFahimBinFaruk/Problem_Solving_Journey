@@ -29,7 +29,7 @@ Follow up: Can you solve the problem in O(1) extra space complexity? (The output
 """
 
 
-# Time complexity O(N)
+# Time O(N) | Space O(1)
 
 def productExceptSelf(nums):
     result=[1] * len(nums)
