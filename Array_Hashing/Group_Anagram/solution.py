@@ -34,6 +34,9 @@ time-complexity: O(M*N)
 
 import collections
 
+
+# Solution : hash-map : Time O(N * M) | Space O(N * M)
+
 def groupAnagram(strs):
     # defining a dictionary with default values as an empty list / [].which means if a key dosent exits it will not raise keyError rather it will return and empty list : []
     result = collections.defaultdict(list)
