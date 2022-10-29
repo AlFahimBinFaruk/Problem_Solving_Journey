@@ -27,7 +27,7 @@ n == height.length
 0 <= height[i] <= 104
 """
 
-
+# Time O(N) | Space(1)
 def maxArea(height):
     result = 0
 
@@ -40,6 +40,7 @@ def maxArea(height):
         if height[l] < height[r]:
             l += 1
         else:
+            # if height[r]<height[l] and by default we will change the right side value
             r -= 1
 
     return result
