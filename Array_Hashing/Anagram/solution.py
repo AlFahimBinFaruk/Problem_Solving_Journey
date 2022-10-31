@@ -26,7 +26,7 @@ s and t consist of lowercase English letters.
 Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
 """
 
-
+# Time O(N) | Space O(N)
 def isAnagram(s, t) -> bool:
     # Solution 01
     # return sorted(s) == sorted(t)

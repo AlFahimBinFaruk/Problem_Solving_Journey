@@ -23,7 +23,8 @@ Constraints:
 -109 <= nums[i] <= 109
 """
 
-# time O(N)
+# time O(N) | space O(N)
+
 
 def longestConsequetive(nums):
     numSet = set(nums)
@@ -37,9 +38,9 @@ def longestConsequetive(nums):
             while (i+length) in numSet:
                 length += 1
             longest = max(length, longest)
-        return longest
+    return longest
 
 
 print(longestConsequetive([0, 3, 7, 2, 5, 8, 4, 6, 0, 1]))
-print(longestConsequetive([100,4,200,1,3,2]))
-print(longestConsequetive([9,1,4,7,3,-1,0,5,8,-1,6]))
+print(longestConsequetive([100, 4, 200, 1, 3, 2]))
+print(longestConsequetive([9, 1, 4, 7, 3, -1, 0, 5, 8, -1, 6]))

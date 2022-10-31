@@ -37,6 +37,7 @@ def isValid(s):
         if c in closeToOpen:
             if stack and stack[-1] == closeToOpen[c]:
                 stack.pop()
+            # Main part of the whole algo.
             else:
                 return False
         else:
