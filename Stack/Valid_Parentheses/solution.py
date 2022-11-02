@@ -39,8 +39,10 @@ def isValid(s):
                 stack.pop()
             # Main part of the whole algo.
             else:
+                # we will return false and the algo ends here : as the open and close brackets will also have to be in currect order.
                 return False
         else:
+            # in stack we will only store the open parentheses
             stack.append(c)
 
     return True if not stack else False
