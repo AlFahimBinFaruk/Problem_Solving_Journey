@@ -3,3 +3,6 @@
 * In Interview try not to do long solutions as it will be difficult to explain , which will give bad 
 impression.
 * While solving a problem with an algo always try to keep in mind the time and space complexity of that algo.
+
+### Resources
+* [Neetcode - Blind 75](https://neetcode.io/practice)
