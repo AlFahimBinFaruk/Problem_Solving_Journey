@@ -4,3 +4,4 @@
 
 ###
 * the main concept of this problem is we gonna take preorder and inorder two binary tree and return the **preordered** version of that binary tree.
+* we gonna use recursive DFS to solve this.
