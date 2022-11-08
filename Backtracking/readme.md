@@ -1,0 +1,1 @@
+* A backtracking algorithm is a problem solving algorithm which uses a brute force approach for finding the desired output.
