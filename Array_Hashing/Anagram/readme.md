@@ -11,4 +11,4 @@
    * counterS[s[i]] = counterS.get(s[i],0)+1
    * counterT[t[i]] = counterT.get(t[i],0)+1    
 3. Then if each and every character and their volume in counterT match with counterS we will return true else we will return false.
-4. Time O(N) | Space O(N)
+4. Time O(S) | Space O(S+T)
