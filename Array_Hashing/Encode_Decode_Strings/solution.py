@@ -13,31 +13,34 @@ Input: [“we”, “say”, “:”, “yes”] Output: [“we”, “say”, �
 # String Delimiter
 
 class Solution:
-    # Encode Array of strings
+    # encode
     # Time O(N) | Space O(1)
-    def encode(self, strs):
+    def encode(self,strs):
         result = ""
 
         for s in strs:
-            result += str(len(s))+"#"+s
+            result += str(len(s)) + "#" + s
+        # encoded version will be : 4#leet4#code 
+        return result    
 
-        return result
 
-    # Decode String and return array
-    # Time O(N * K) | Space O(N)
-    def decode(self, str):
+    # decode
+    # Time O(N*K) | Space O(N)
+    def decode(self,str):
         result = []
-        i = 0
 
+        i = 0
         while i < len(str):
             j = i
+
             while str[j] != "#":
                 j += 1
+             
+            # length = int(str[i]) - gives error for some test cases. 
             length = int(str[i:j])
             result.append(str[j+1:j+1+length])
             i = j+1+length
-
-        return result
+        return result      
 
 
 test = Solution()
