@@ -27,24 +27,26 @@ n == height.length
 0 <= height[i] <= 104
 """
 
-# Time O(N) | Space(1)
-def maxArea(height):
-    result = 0
+class Solution:
+    # Time O(N) | Space O(1)
+    def maxArea(self, height: List[int]) -> int:
+        # two pointer - first , last
+        # container = gap between two lines
+        l = 0
+        r = len(height) -1
 
-    l = 0
-    r = len(height)-1
+        maxArea = 0
 
-    while l < r:
-        area = (r-l)*min(height[l], height[r])
-        result = max(area, result)
-        if height[l] < height[r]:
-            l += 1
-        else:
-            # if height[r]<height[l] and by default we will change the right side value
-            r -= 1
+        while l < r:
+            area = (r-l) * min(height[l],height[r])
+            maxArea = max(maxArea,area)
+            
+            # we will always decrease the height that is smaller than another.
+            if height[l] < height[r]:
+                l += 1
+            # elif height[l] > height[r]:
+            #     r -= 1
+            else:
+                r -= 1
 
-    return result
-
-
-print(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]))
-print(maxArea([1, 1]))
+        return maxArea          
