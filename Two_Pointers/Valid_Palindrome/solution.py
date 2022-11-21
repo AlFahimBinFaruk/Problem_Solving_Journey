@@ -51,28 +51,34 @@ print(isPalindromeSolutionOne("race a car"))
 
 # Solution 02 : with Custom method
 # Time O(N) | Space O(1)
-def isPalindromeSolutionTwo(s):
+def isPalindrome(self, s: str) -> bool:
+    # two pointer 
+    # we have to make sure that all the char are alpha numeric
     if not len(s):
         return False
     l = 0
     r = len(s)-1
 
     while l < r:
-        while l < r and not alphaNum(s[l]):
-            l += 1
-        while r > l and not alphaNum(s[r]):
-            r -= 1
+         while l < r and not self.isAlphaNum(s[l]):
+               l += 1
+         while r > l and not self.isAlphaNum(s[r]):
+               r -= 1
 
-        if s[l].lower() != s[r].lower():
-            return False
+         # while comparing all of them have to be in lower case.
+         if s[l].lower() != s[r].lower():
+             return False
 
-        l += 1
-        r -= 1
-    return True
+         l += 1
+         r -= 1    
 
+    return True  
 
-def alphaNum(s):
-    return (ord("A") <= ord(s) <= ord("Z") or ord("a") <= ord(s) <= ord("z") or ord("0") <= ord(s) <= ord("9"))
+# func to check alpha numeric
+def isAlphaNum(self,s):
+    return (ord("A") <= ord(s) <= ord("Z")
+    or ord("a") <= ord(s) <= ord("z")
+    or ord("0") <= ord(s) <= ord("9")) 
 
 
 print(isPalindromeSolutionTwo("A man, a plan, a canal: Panama"))
