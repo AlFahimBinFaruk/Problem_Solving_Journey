@@ -7,7 +7,7 @@ class Solution:
 
         # key = string , value = string occurance
         charSet = {}
-        # count the individual character max occurance
+        # count the individual character max occurance in the length i have covered
         maxFreq = 0
         # monitor the max length     
         maxLength = 0
