@@ -1,52 +1,28 @@
 # https://leetcode.com/problems/longest-repeating-character-replacement/
-"""
-You are given a string s and an integer k. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most k times.
+class Solution:
+    # Time O(N) | Space O(N)
+    def characterReplacement(self, s: str, k: int) -> int:
+        # sliding window
+        # In input type there will only be two types of characters(A,B or C,D)
 
-Return the length of the longest substring containing the same letter you can get after performing the above operations.
+        # key = string , value = string occurance
+        charSet = {}
+        # count the individual character max occurance
+        maxFreq = 0
+        # monitor the max length     
+        maxLength = 0
 
- 
+        l = 0
 
-Example 1:
+        for r in range(len(s)):
+            charSet[s[r]] = 1 + charSet.get(s[r],0)
+            maxFreq = max(maxFreq,charSet[s[r]])
 
-Input: s = "ABAB", k = 2
-Output: 4
-Explanation: Replace the two 'A's with two 'B's or vice versa.
-Example 2:
+            while (r-l+1) - maxFreq > k:
+                charSet[s[l]] -= 1
+                l += 1
 
-Input: s = "AABABBA", k = 1
-Output: 4
-Explanation: Replace the one 'A' in the middle with 'B' and form "AABBBBA".
-The substring "BBBB" has the longest repeating letters, which is 4.
- 
-
-Constraints:
-
-1 <= s.length <= 105
-s consists of only uppercase English letters.
-0 <= k <= s.length
-"""
-
-# Time O(N) | Space O(N)
+            maxLength = max(maxLength,r-l+1)
 
 
-def characterReplacement(s, k):
-    charSet = {}
-    maxFreq = 0
-    maxLength = 0
-
-    l = 0
-
-    for r in range(len(s)):
-        charSet[s[r]] = 1+charSet.get(s[r], 0)
-        maxFreq = max(maxFreq, charSet[s[r]])
-
-        if (r-l+1)-maxFreq > k:
-            charSet[s[l]] -= 1
-            l += 1
-        maxLength = max(maxLength, r-l+1)
-
-    return maxLength
-
-
-print(characterReplacement("AABABBA", 1))
-print(characterReplacement("ABAB", 2))
+        return maxLength   
