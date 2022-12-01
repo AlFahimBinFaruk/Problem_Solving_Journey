@@ -8,16 +8,16 @@
 
 # Itereative Solution
 # Time O(N) | Space O(1)
-
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         prev = None
         curr = head
 
         while curr:
-            temp = curr.next
+            tempNxt = curr.next
+            # this line is updating the pointer.
             curr.next = prev
             prev = curr
-            curr = temp
+            curr = tempNxt
 
-        return prev
+        return prev 
