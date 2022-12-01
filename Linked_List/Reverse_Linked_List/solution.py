@@ -10,6 +10,7 @@
 # Time O(N) | Space O(1)
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        # we gonna use two pointer concept.
         prev = None
         curr = head
 
