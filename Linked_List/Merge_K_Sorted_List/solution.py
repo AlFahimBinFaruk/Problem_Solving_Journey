@@ -4,7 +4,7 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    # Time O(N*Log(K)) | Space O(N + K)
+    # Time O(N*Log(K)) | Space O(N)
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         if not lists or len(lists) == 0:
             return None
