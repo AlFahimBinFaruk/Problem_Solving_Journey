@@ -4,12 +4,14 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-
-# Time O(N) | Space O(N) - Depth-first-search recursive method.
 class Solution:
+    # DFS - recursion
+    # Time O(N) | Space O(N)
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
 
-        depth = 1+max(self.maxDepth(root.left), self.maxDepth(root.right))
-        return depth
+        depth = 1 + max(self.maxDepth(root.left),self.maxDepth(root.right))
+
+        return depth    
+        
