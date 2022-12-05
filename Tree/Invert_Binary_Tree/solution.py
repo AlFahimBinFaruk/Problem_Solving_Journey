@@ -4,21 +4,25 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-
-# Time O(N) | Space O(N) - Depth-first-search
 class Solution:
+    # Time O(N) | Space O(N)
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        # in case of recursion checiking none case is very important other-wise it will be an infinite loop.
-        # the recursion-algo will end when it will return None.
+        # Interting means swapping child of each nodes
+        # we gonna use DFS(recursion) to solve this.
+         
         if not root:
             return None
 
-        # Swap the childs
-        tmp = root.left
+        # swapping the child nodes
+        tmpLeft = root.left
         root.left = root.right
-        root.right = tmp
+        root.right =  tmpLeft
 
+        # moving to next nodes
         self.invertTree(root.left)
         self.invertTree(root.right)
 
         return root
+        
+
+        
