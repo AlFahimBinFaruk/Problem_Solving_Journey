@@ -5,9 +5,10 @@
 #         self.left = None
 #         self.right = None
 
-# Time O(log(N)) | Space O(1)
 class Solution:
+    # Time O(logN) | Space O(1)
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        # we gonna use DFS - iteration to solve this.
         current = root
 
         while current:
@@ -16,4 +17,5 @@ class Solution:
             elif p.val < current.val and q.val < current.val:
                 current = current.left
             else:
-                return current
+                # if there is a split
+                return current   
