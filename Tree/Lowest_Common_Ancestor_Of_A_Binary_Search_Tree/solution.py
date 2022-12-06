@@ -17,5 +17,5 @@ class Solution:
             elif p.val < current.val and q.val < current.val:
                 current = current.left
             else:
-                # if there is a split
+                # if there is a split(if p and q are from different subtree)
                 return current   
