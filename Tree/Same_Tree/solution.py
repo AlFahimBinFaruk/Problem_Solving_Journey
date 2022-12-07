@@ -15,7 +15,9 @@ class Solution:
 
         if (p and q) and (p.val == q.val):
             # if root/parent nodes are same then we will check the left,right nodes.
-            isSame = (self.isSameTree(p.left,q.left) and self.isSameTree(q.right,q.right))  
+            isSame = (self.isSameTree(p.left,q.left) and self.isSameTree(p.right,q.right))  
             return isSame
         else:
-            return False 
+            return False      
+        
+               
