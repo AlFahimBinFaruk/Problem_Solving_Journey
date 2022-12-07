@@ -4,17 +4,18 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-
-# Time O(N+M) | Space O(1) - DFS-Recursion.
 class Solution:
+    # Time O(N) | Space O(N)
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        # If the root is NULL
+        # we gonna use DFS - recursion to solve this.
+
+        # if both roots are null then it is a same tree.
         if not p and not q:
             return True
 
-        if p and q and p.val == q.val:
-            isSame = self.isSameTree(
-                p.left, q.left) and self.isSameTree(p.right, q.right)
+        if (p and q) and (p.val == q.val):
+            # if root/parent nodes are same then we will check the left,right nodes.
+            isSame = (self.isSameTree(p.left,q.left) and self.isSameTree(q.right,q.right))  
             return isSame
         else:
-            return False
+            return False 
