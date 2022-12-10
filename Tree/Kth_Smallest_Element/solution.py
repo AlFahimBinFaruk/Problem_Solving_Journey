@@ -4,21 +4,23 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-
-# Time O(N+K) | Space O(H)
 class Solution:
+    # Time O(H+K) | Space O(H)
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+        # DFS Iteration - Preorder traversal
         n = 0
         stack = []
         curr = root
 
-        while stack or curr:
+        while curr or stack:
             while curr:
                 stack.append(curr)
                 curr = curr.left
 
             curr = stack.pop()
             n += 1
+
             if n == k:
                 return curr.val
-            curr = curr.right
+
+            curr = curr.right       
