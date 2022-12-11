@@ -21,7 +21,7 @@ class Solution:
             leftSum = max(dfs(root.left),0)
             rightSum = max(dfs(root.right),0)
             
-            # update res by splitting the tree split
+            # update res by splitting the tree
             res[0] = max(res[0],(root.val+leftSum+rightSum))
 
             # return response without splitting the tree
