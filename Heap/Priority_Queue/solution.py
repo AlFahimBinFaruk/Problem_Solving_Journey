@@ -1,40 +1,41 @@
 import heapq
-
-
 class MedianFinder:
-
     def __init__(self):
-        self.smallHeap = []  # MaxHeap
-        self.largeHeap = []  # MinHeap
-    
-    # Time O(logN) | Space O(N)
+        self.smallHeap = [] # max heap
+        self.largeHeap = [] # min heap
+
+    # Time O(logN)  
     def addNum(self, num: int) -> None:
-        heapq.heappush(self.smallHeap, -1 * num)
+        # by default when even we get a number we will add it to small heap.
+        heapq.heappush(self.smallHeap,(num * -1))
 
-        # make sure than elements of smallHeap are <= largeHeap
-        if self.smallHeap and self.largeHeap and (-1 * self.smallHeap[0] > self.largeHeap[0]):
-            val = -1 * heapq.heappop(self.smallHeap)
-            heapq.heappush(self.largeHeap, val)
+        # see if not smallHeap <= largeHeap is true
+        if self.smallHeap and self.largeHeap and ((self.smallHeap[0] * -1) > self.largeHeap[0]):
+            val =(heapq.heappop(self.smallHeap) * -1)
+            heapq.heappush(self.largeHeap,val)
 
-        # if uneven?
-        if len(self.smallHeap) > len(self.largeHeap) + 1:
-            val = -1 * heapq.heappop(self.smallHeap)
-            heapq.heappush(self.largeHeap, val)
-        if len(self.largeHeap) > len(self.smallHeap) + 1:
+        # see if its statisty the length condition
+        if len(self.smallHeap) > (len(self.largeHeap) + 1):
+            val =(heapq.heappop(self.smallHeap) * -1)
+            heapq.heappush(self.largeHeap,val)
+
+        if len(self.largeHeap) > (len(self.smallHeap) + 1):
             val = heapq.heappop(self.largeHeap)
-            heapq.heappush(self.smallHeap, -1 * val)
-
-
-    # Time O(1) | Space O(1)
+            heapq.heappush(self.smallHeap,(val * -1))
+     
+    # Time O(1) | Space O(1) 
     def findMedian(self) -> float:
-        # if odd
+        # if any heap length is odd
         if len(self.smallHeap) > len(self.largeHeap):
-            return (-1 * self.smallHeap[0])
-        if len(self.largeHeap) > len(self.smallHeap):
-            return self.largeHeap[0]
+            return (self.smallHeap[0] * -1)
 
-        # if even
-        return ((-1 * self.smallHeap[0]) + self.largeHeap[0])/2.0
+        if len(self.largeHeap) > len(self.smallHeap):
+            return self.largeHeap[0]   
+
+        # in case of even
+        return (((self.smallHeap[0] * -1)+self.largeHeap[0]) / 2)    
+         
+        
 
 
 # Your MedianFinder object will be instantiated and called as such:
