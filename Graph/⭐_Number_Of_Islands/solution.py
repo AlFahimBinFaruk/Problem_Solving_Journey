@@ -29,7 +29,7 @@ class Solution:
         return isIsland
 
     
-    ### BFS solution
+    ### BFS solution - recomended
     class Solution:
     # Time O(M * N) | Space O(N*M)
     def numIslands(self, grid: List[List[str]]) -> int:
