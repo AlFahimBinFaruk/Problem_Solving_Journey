@@ -5,10 +5,9 @@ class Node:
         self.val = val
         self.neighbors = neighbors if neighbors is not None else []
 """
-
-
 class Solution:
-    # Time O(N*C) | Space O(C)
+    # c = number of time we have to copy
+    # Time O(N*C) | Space O(N)
     def cloneGraph(self, node: 'Node') -> 'Node':
         oldToNew = {}
 
@@ -16,12 +15,12 @@ class Solution:
             if node in oldToNew:
                 return oldToNew[node]
 
-            clone = Node(node.val)
-            oldToNew[node] = clone
+            copy = Node(node.val)
+            oldToNew[node] = copy
 
             for nei in node.neighbors:
-                clone.neighbors.append(dfs(nei))
+                copy.neighbors.append(dfs(nei))
 
-            return clone
+            return copy
 
-        return dfs(node) if node else None
+        return dfs(node) if node else None    
