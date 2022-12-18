@@ -11,7 +11,7 @@ class Solution:
             adj[n2].append(n1)
 
         visited = set()
-
+        # to make sure there is no loop
         def dfs(i, prevNode):
             if i in visited:
                 return False
@@ -25,5 +25,5 @@ class Solution:
                     return False
 
             return True
-
+        # it is a valid tree if there is no loop and all the nodes are connected(n=len(visited))
         return (dfs(0, -1) and n == len(visited))
