@@ -1,6 +1,7 @@
 ## Number of distinct island
 
 1. With using node count hasing fails because of this kind of scene
+2. [Practice](https://www.geeksforgeeks.org/problems/number-of-distinct-islands/0)
 ```text
 slrtb => s1lrtb
 slrtb => s1lr2tb
