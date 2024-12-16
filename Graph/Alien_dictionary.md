@@ -1,6 +1,6 @@
 ## Alian Dictionary
-* https://neetcode.io/problems/foreign-dictionary
-* https://www.geeksforgeeks.org/problems/alien-dictionary/1
+* [practice](https://neetcode.io/problems/foreign-dictionary)
+* [practice](https://www.geeksforgeeks.org/problems/alien-dictionary/1)
 
 
 ```cpp
